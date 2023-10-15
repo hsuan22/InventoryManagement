@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "建立報廢單";
+}
+
+<h2>建立報廢單</h2>
+
+<form method="post" action="/Inventory/CreateScrap">
+    <div>
+        <label>報廢單編號</label>
+        <input type="text" id="ScrapSN" name="ScrapSN" />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" />
+    </div>
+    <div>
+        <label>報廢日期</label>
+        <input type="date" id="ScrapDTM" name="ScrapDTM" readonly/>
+        <label>移出倉別</label>
+        <input type="text" id="MoveOutPlaceID" name="MoveOutPlaceID" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>報廢數量</label>
+        <input type="number" min="1" id="ScrapQty" name="ScrapQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>報廢數量</label>
+        <input type="number" min="1" id="ScrapQty" name="ScrapQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>報廢數量</label>
+        <input type="number" min="1" id="ScrapQty" name="ScrapQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>報廢數量</label>
+        <input type="number" min="1" id="ScrapQty" name="ScrapQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>報廢數量</label>
+        <input type="number" min="1" id="ScrapQty" name="ScrapQty" />
+    </div>
+
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>
+
+

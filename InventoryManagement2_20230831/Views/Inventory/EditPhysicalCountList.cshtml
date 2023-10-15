@@ -1,0 +1,29 @@
+﻿@model InventoryManagement3.Models.PhysicalCountList
+@{
+    ViewBag.Title = "修改盤點數量";
+}
+
+<h2>修改盤點數量</h2>
+<br />
+
+<form method="post" action="/Inventory/EditPhysicalCountList">
+    <div >
+        <label class="physical-count-label">倉別編號</label>
+        <input type="text" id="PlaceID" name="PlaceID" value="@Model.PlaceID" readonly />
+        <label class="physical-count-label">零件編號</label>
+        <input type="text" id="PartID" name="PartID" value="@Model.PartID" readonly />
+        <label class="physical-count-label">零件名稱</label>
+        <input type="text" id="PartName" name="PartName" value="@Model.PartName" readonly />
+    </div>
+    <div>
+        <label class="physical-count-label">系統庫存數量</label>
+        <input type="number" min="0" id="SystemQty" name="SystemQty" value="@Model.SystemQty" readonly />
+        <label class="physical-count-label">實際盤點數量</label>
+        <input type="number" min="0" id="CountedQty" name="CountedQty" value="@Model.CountedQty" />
+        <label class="physical-count-label">差異</label>
+        <input type="number" id="Difference" name="Difference" value="@Model.Difference" readonly />
+
+    </div>
+    <br />
+    <input type="submit" value="儲存" />
+</form>

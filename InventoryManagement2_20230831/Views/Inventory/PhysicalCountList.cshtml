@@ -1,0 +1,44 @@
+﻿@using InventoryManagement3.Models;
+@{
+    List<PhysicalCountList> count_list = ViewBag.count_list;
+}
+
+@{
+    ViewBag.Title = "盤點清冊";
+}
+
+<h2>盤點清冊</h2>
+
+<div class="fixTableHeadPhysicalCount">
+    <table>
+        <thead>
+            <tr>
+                <th>倉別編號</th>
+                <th>零件編號</th>
+                <th>零件名稱</th>
+                <th>系統庫存數量</th>
+                <th>實際盤點數量</th>
+                <th>差異</th>
+                <th>編輯</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (PhysicalCountList CountList in count_list)
+            {
+                <tr>
+                    <td>@CountList.PlaceID</td>
+                    <td>@CountList.PartID</td>
+                    <td>@CountList.PartName</td>
+                    <td>@CountList.SystemQty</td>
+                    <td>@CountList.CountedQty</td>
+                    <td>@CountList.Difference</td>
+                    <td>@Html.ActionLink("修改", "EditPhysicalCountList", new { PartID = CountList.PartID, PlaceID = CountList.PlaceID })</td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>

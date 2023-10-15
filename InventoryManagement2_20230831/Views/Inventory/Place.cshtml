@@ -1,0 +1,38 @@
+﻿@using InventoryManagement3.Models;
+@{ 
+    List<Place> place_list = ViewBag.place_list;
+}
+@{
+    ViewBag.Title = "查詢倉別";
+}
+
+<h2>倉別基本資料</h2>
+<table class="table-place">
+    <thead>
+        <tr class="table-header">
+            <th>倉別編號</th>
+            <th>倉別名稱</th>
+            <th>編輯</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Place place in place_list)
+        {
+            <tr>
+                <td>@place.PlaceID</td>
+                <td>@place.PlaceName</td>
+                <td>
+                    @Html.ActionLink("修改", "EditPlace", new { PlaceID = place.PlaceID })
+                    |
+                    @Html.ActionLink("刪除", "DeletePlace", new { PlaceID = place.PlaceID })
+                </td>
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+

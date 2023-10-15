@@ -1,0 +1,34 @@
+﻿@model InventoryManagement3.Models.ReturnToStock
+@{
+    ViewBag.Title = "修改退料單";
+}
+
+<h2>修改退料單</h2>
+
+<br />
+
+<form method="post" action="/Inventory/EditRTS">
+    <div>
+        <label>退料單編號</label>
+        <input type="text" id="RTSSN" name="RTSSN" value="@Model.RTSSN" readonly />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" value="@Model.EmployeeID"  readonly/>
+    </div>
+    <div>
+        <label>退料日期</label>
+        <input type="datetime" id="RTSDTM" name="RTSDTM" value="@Model.RTSDTM.ToLongDateString().ToString()"  readonly/>
+        <label>退料倉別</label>
+        <input type="text" id="MoveInPlaceID" name="MoveInPlaceID" value="@Model.MoveInPlaceID" />
+
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" value="@Model.Item" readonly />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" value="@Model.PartID" />
+        <label>退料數量</label>
+        <input type="number" min="1" id="RTSQty" name="RTSQty" value="@Model.RTSQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>

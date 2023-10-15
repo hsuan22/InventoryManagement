@@ -1,0 +1,51 @@
+﻿@using InventoryManagement3.Models;
+@{
+    List<Returns> returns_list = ViewBag.returns_list;
+}
+@{
+    ViewBag.Title = "查詢退貨單";
+}
+
+<h2>退貨單明細</h2>
+
+<table class="table-sheetdetail">
+    <thead>
+        <tr class="table-header">
+            <th>退貨單號</th>
+            <th>退貨日期</th>
+            <th>項次</th>
+            <th>零件編號</th>
+            <th>退貨數量</th>
+            <th>供應商編號</th>
+            <th>退貨倉別</th>
+            <th>員工編號</th>
+            <th>編輯</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Returns returns in returns_list)
+        {
+        <tr>
+            <td>@returns.ReturnsSN</td>
+            <td>@returns.ReturnsDTM.ToLongDateString().ToString()</td>
+            <td>@returns.Item</td>
+            <td>@returns.PartID</td>
+            <td>@returns.ReturnsQty</td>
+            <td>@returns.SupplierID</td>
+            <td>@returns.MoveOutPlaceID</td>
+            <td>@returns.EmployeeID</td>
+
+            <td>
+                @Html.ActionLink("修改", "EditReturns", new { ReturnsSN = returns.ReturnsSN, Item = returns.Item })
+                |
+                @Html.ActionLink("刪除", "DeleteReturns", new { ReturnsSN = returns.ReturnsSN, Item = returns.Item })
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+
+

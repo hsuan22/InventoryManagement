@@ -1,0 +1,33 @@
+﻿@model InventoryManagement3.Models.MaterialRequest
+@{
+    ViewBag.Title = "修改領料單";
+}
+<h2>修改領料單</h2>
+
+<br />
+
+<form method="post" action="/Inventory/EditMaterialRequest">
+    <div>
+        <label>領料單編號</label>
+        <input type="text" id="MaterialRequestSN" name="MaterialRequestSN" value="@Model.MaterialRequestSN" readonly />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" value="@Model.EmployeeID"  readonly/>
+    </div>
+    <div>
+        <label>領料日期</label>
+        <input type="datetime" id="RequestDTM" name="RequestDTM" value="@Model.RequestDTM.ToLongDateString().ToString()"  readonly/>
+        <label>領料倉別</label>
+        <input type="text" id="MoveOutPlaceID" name="MoveOutPlaceID" value="@Model.MoveOutPlaceID" />
+
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" value="@Model.Item" readonly />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" value="@Model.PartID" />
+        <label>領料數量</label>
+        <input type="number" min="1" id="RequestQty" name="RequestQty" value="@Model.RequestQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>

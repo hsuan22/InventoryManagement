@@ -1,0 +1,18 @@
+﻿@model InventoryManagement3.Models.Place
+@{
+    ViewBag.Title = "修改倉別資料";
+}
+
+<h2>修改倉別資料</h2>
+
+<form method="post" action="/Inventory/EditPlace">
+    <div>
+        <label>倉別編號</label>
+        <input type="text" id="PlaceID" name="PlaceID" value="@Model.PlaceID" readonly />
+        <label>倉別名稱</label>
+        <input type="text" id="PlaceName" name="PlaceName" value="@Model.PlaceName" />
+    </div>
+    
+    <input class="save-data" type="submit" value="儲存" />
+</form>
+

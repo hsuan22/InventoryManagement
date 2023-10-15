@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "修改調料單";
+}
+
+<h2>修改調料單</h2>
+
+<form method="post" action="/Inventory/EditMaterialTransfer">
+    <div>
+        <label>調料單編號</label>
+        <input type="text" id="TransferSN" name="TransferSN" value="@Model.TransferSN" readonly />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" value="@Model.EmployeeID" readonly/>
+    </div>
+    <div>
+        <label>調料日期</label>
+        <input type="datetime" id="TransferDTM" name="TransferDTM" value="@Model.TransferDTM.ToLongDateString().ToString()"  readonly/>
+        <label>移入倉別</label>
+        <input type="text" id="MoveInPlaceID" name="MoveInPlaceID" value="@Model.MoveInPlaceID" />
+        <label>移出倉別</label>
+        <input type="text" id="MoveOutPlaceID" name="MoveOutPlaceID" value="@Model.MoveOutPlaceID" />
+
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" value="@Model.Item" readonly />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" value="@Model.PartID" />
+        <label>調料數量</label>
+        <input type="number" min="1" id="TransferQty" name="TransferQty" value="@Model.TransferQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>

@@ -1,0 +1,47 @@
+﻿@using InventoryManagement3.Models;
+@{
+    List<Scrap> scrap_list = ViewBag.scrap_list;
+}
+@{
+    ViewBag.Title = "查詢報廢單";
+}
+
+<h2>報廢單明細</h2>
+
+<table class="table-sheetdetail">
+    <thead>
+        <tr class="table-header">
+            <th>報廢單編號</th>
+            <th>報廢日期</th>
+            <th>項次</th>
+            <th>零件編號</th>
+            <th>報廢數量</th>
+            <th>移出倉別</th>
+            <th>員工編號</th>
+            <th>編輯</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Scrap scraps in scrap_list)
+        {
+            <tr>
+                <td>@scraps.ScrapSN</td>
+                <td>@scraps.ScrapDTM.ToLongDateString().ToString()</td>
+                <td>@scraps.Item</td>
+                <td>@scraps.PartID</td>
+                <td>@scraps.ScrapQty</td>
+                <td>@scraps.MoveOutPlaceID</td>
+                <td>@scraps.EmployeeID</td>
+
+                <td>
+                    @Html.ActionLink("修改", "EditScrap", new { ScrapSN = scraps.ScrapSN, Item = scraps.Item })
+                    |
+                    @Html.ActionLink("刪除", "DeleteScrap", new { ScrapSN = scraps.ScrapSN, Item = scraps.Item })
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

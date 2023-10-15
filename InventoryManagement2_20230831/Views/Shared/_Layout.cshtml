@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("零件管理系統", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("首頁", "Index", "Home")</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            倉別管理
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("查詢倉別", "Place", "Inventory")</li>
+                            <li>@Html.ActionLink("建立倉別", "CreatePlace", "Inventory")</li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            進/退貨管理
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("查詢進貨單", "GoodsReceipt", "Inventory")</li>
+                            <li>@Html.ActionLink("建立進貨單", "CreateGoodsReceipt", "Inventory")</li>
+                            <li>@Html.ActionLink("查詢退貨單", "Returns", "Inventory")</li>
+                            <li>@Html.ActionLink("建立退貨單", "CreateReturns", "Inventory")</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            領/退料管理
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("查詢領料單", "MaterialRequest", "Inventory")</li>
+                            <li>@Html.ActionLink("建立領料單", "CreateMaterialRequest", "Inventory")</li>
+                            <li>@Html.ActionLink("查詢退料單", "RTS", "Inventory")</li>
+                            <li>@Html.ActionLink("建立退料單", "CreateRTS", "Inventory")</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            調料管理
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("查詢調料單", "MaterialTransfer", "Inventory")</li>
+                            <li>@Html.ActionLink("建立調料單", "CreateMaterialTransfer", "Inventory")</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            報廢管理
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("查詢報廢單", "Scrap", "Inventory")</li>
+                            <li>@Html.ActionLink("建立報廢單", "CreateScrap", "Inventory")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("盤點管理", "PhysicalCountList", "Inventory")</li>
+                    <li>@Html.ActionLink("庫存查詢", "Stock", "Inventory")</li>
+                    <li>@Html.ActionLink("庫存異動查詢", "StockChange", "Inventory")</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

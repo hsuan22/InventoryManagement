@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "建立領料單";
+}
+
+<h2>建立領料單</h2>
+
+
+<form method="post" action="/Inventory/CreateMaterialRequest">
+    <div>
+        <label>領料單編號</label>
+        <input type="text" id="MaterialRequestSN" name="MaterialRequestSN" />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" />
+    </div>
+    <div>
+        <label>領料日期</label>
+        <input type="date" id="RequestDTM" name="RequestDTM" readonly/>
+        <label>領料倉別</label>
+        <input type="text" id="MoveOutPlaceID" name="MoveOutPlaceID" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>領料數量</label>
+        <input type="number" min="1" id="RequestQty" name="RequestQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>領料數量</label>
+        <input type="number" min="1" id="RequestQty" name="RequestQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>領料數量</label>
+        <input type="number" min="1" id="RequestQty" name="RequestQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>領料數量</label>
+        <input type="number" min="1" id="RequestQty" name="RequestQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>領料數量</label>
+        <input type="number" min="1" id="RequestQty" name="RequestQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>

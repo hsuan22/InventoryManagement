@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "建立進貨單";
+}
+
+<h2>建立進貨單</h2>
+
+<form method="post" action="/Inventory/CreateGoodsReceipt">
+    <div>
+        <label>進貨單編號</label>
+        <input type="text" id="GRSN" name="GRSN" />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" />
+    </div>
+    <div>
+        <label>進貨日期</label>
+        <input type="date" id="ReceiptDTM" name="ReceiptDTM" readonly/>
+        <label>進貨倉別</label>
+        <input type="text" id="MoveInPlaceID" name="MoveInPlaceID" />
+        <label>供應商編號</label>
+        <input type="text" id="SupplierID" name="SupplierID" />
+
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>進貨數量</label>
+        <input type="number" min="1" id="GRQty" name="GRQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>進貨數量</label>
+        <input type="number" min="1" id="GRQty" name="GRQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>進貨數量</label>
+        <input type="number" min="1" id="GRQty" name="GRQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>進貨數量</label>
+        <input type="number" min="1" id="GRQty" name="GRQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>進貨數量</label>
+        <input type="number" min="1" id="GRQty" name="GRQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>

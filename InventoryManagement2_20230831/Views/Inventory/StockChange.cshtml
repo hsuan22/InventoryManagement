@@ -1,0 +1,48 @@
+﻿@using InventoryManagement3.Models;
+@{
+    List<StockChange> stock_change_list = ViewBag.stock_change_list;
+}
+@{
+    ViewBag.Title = "庫存異動查詢";
+}
+
+<h2>庫存異動明細</h2>
+
+<div class="fixTableHeadStockChange">
+    <table >
+        <thead>
+            <tr class="table-header">
+                <th>異動單編號</th>
+                <th>異動時間</th>
+                <th>項次</th>
+                <th>零件編號</th>
+                <th>移入倉別</th>
+                <th>移出倉別</th>
+                <th>移入數量</th>
+                <th>移出數量</th>
+                <th>異動狀態類別</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (StockChange stock_change in stock_change_list)
+            {
+                <tr>
+                    <td>@stock_change.StockChangeSN</td>
+                    <td>@stock_change.StockChangeDTM</td>
+                    <td>@stock_change.Item</td>
+                    <td>@stock_change.PartID</td>
+                    <td>@stock_change.MoveInPlaceID</td>
+                    <td>@stock_change.MoveOutPlaceID</td>
+                    <td>@stock_change.MoveInQty</td>
+                    <td>@stock_change.MoveOutQty</td>
+                    <td>@stock_change.ChangeStatusType</td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

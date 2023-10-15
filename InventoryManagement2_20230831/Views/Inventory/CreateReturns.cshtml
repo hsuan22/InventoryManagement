@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "建立退貨單";
+}
+
+<h2>建立退貨單</h2>
+
+<form method="post" action="/Inventory/CreateReturns">
+    <div>
+        <label>退貨單編號</label>
+        <input type="text" id="ReturnsSN" name="ReturnsSN" />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" />
+    </div>
+    <div>
+        <label>退貨日期</label>
+        <input type="date" id="ReturnsDTM" name="ReturnsDTM" readonly/>
+        <label>退貨倉別</label>
+        <input type="text" id="MoveOutPlaceID" name="MoveOutPlaceID" />
+        <label>供應商編號</label>
+        <input type="text" id="SupplierID" name="SupplierID" />
+
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退貨數量</label>
+        <input type="number" min="1" id="ReturnsQty" name="ReturnsQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退貨數量</label>
+        <input type="number" min="1" id="ReturnsQty" name="ReturnsQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退貨數量</label>
+        <input type="number" min="1" id="ReturnsQty" name="ReturnsQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退貨數量</label>
+        <input type="number" min="1" id="ReturnsQty" name="ReturnsQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退貨數量</label>
+        <input type="number" min="1" id="ReturnsQty" name="ReturnsQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>
+

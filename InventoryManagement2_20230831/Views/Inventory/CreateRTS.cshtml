@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "建立退料單";
+}
+
+<h2>建立退料單</h2>
+
+<form method="post" action="/Inventory/CreateRTS">
+    <div>
+        <label>退料單編號</label>
+        <input type="text" id="RTSSN" name="RTSSN" />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" />
+    </div>
+    <div>
+        <label>退料日期</label>
+        <input type="date" id="RTSDTM" name="RTSDTM" readonly/>
+        <label>退料倉別</label>
+        <input type="text" id="MoveInPlaceID" name="MoveInPlaceID" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退料數量</label>
+        <input type="number" min="1" id="RTSQty" name="RTSQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退料數量</label>
+        <input type="number" min="1" id="RTSQty" name="RTSQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退料數量</label>
+        <input type="number" min="1" id="RTSQty" name="RTSQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退料數量</label>
+        <input type="number" min="1" id="RTSQty" name="RTSQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>退料數量</label>
+        <input type="number" min="1" id="RTSQty" name="RTSQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>

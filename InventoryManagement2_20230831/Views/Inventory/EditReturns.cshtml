@@ -1,0 +1,34 @@
+﻿@model InventoryManagement3.Models.Returns
+@{
+    ViewBag.Title = "修改退貨單";
+}
+
+<h2>修改退貨單</h2>
+
+<form method="post" action="/Inventory/EditReturns">
+    <div>
+        <label>退貨單編號</label>
+        <input type="text" id="ReturnsSN" name="ReturnsSN" value="@Model.ReturnsSN" readonly />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" value="@Model.EmployeeID"  readonly/>
+    </div>
+    <div>
+        <label>退貨日期</label>
+        <input type="datetime" id="ReturnsDTM" name="ReturnsDTM" value="@Model.ReturnsDTM.ToLongDateString().ToString()"  readonly/>
+        <label>退貨倉別</label>
+        <input type="text" id="MoveOutPlaceID" name="MoveOutPlaceID" value="@Model.MoveOutPlaceID" />
+        <label>供應商編號</label>
+        <input type="text" id="SupplierID" name="SupplierID" value="@Model.SupplierID" />
+
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" value="@Model.Item" readonly />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" value="@Model.PartID" />
+        <label>退貨數量</label>
+        <input type="number" min="1" id="ReturnsQty" name="ReturnsQty" value="@Model.ReturnsQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>

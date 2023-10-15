@@ -1,0 +1,33 @@
+﻿@model InventoryManagement3.Models.Scrap
+@{
+    ViewBag.Title = "修改報廢單";
+}
+
+<h2>修改報廢單</h2>
+
+<form method="post" action="/Inventory/EditScrap">
+    <div>
+        <label>報廢單編號</label>
+        <input type="text" id="ScrapSN" name="ScrapSN" value="@Model.ScrapSN" readonly />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" value="@Model.EmployeeID"  readonly>
+    </div>
+    <div>
+        <label>報廢日期</label>
+        <input type="datetime" id="ScrapDTM" name="ScrapDTM" value="@Model.ScrapDTM.ToLongDateString().ToString()"  readonly/>
+        <label>移出倉別</label>
+        <input type="text" id="MoveOutPlaceID" name="MoveOutPlaceID" value="@Model.MoveOutPlaceID" />
+
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" value="@Model.Item" readonly />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" value="@Model.PartID" />
+        <label>報廢數量</label>
+        <input type="number" min="1" id="ScrapQty" name="ScrapQty" value="@Model.ScrapQty" />
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>
+

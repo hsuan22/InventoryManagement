@@ -1,0 +1,36 @@
+﻿@model InventoryManagement3.Models.GoodsReceipt
+@{
+    ViewBag.Title = "修改進貨單";
+}
+
+<h2>修改進貨單</h2>
+<br/>
+
+<form method="post" action="/Inventory/EditGoodsReceipt">
+    <div>
+        <label>進貨單編號</label>
+        <input type="text" id="GRSN" name="GRSN" value="@Model.GRSN" readonly/>
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" value="@Model.EmployeeID"  readonly/>
+    </div>
+    <div>
+        <label>進貨日期</label>
+        <input type="datetime" id="ReceiptDTM" name="ReceiptDTM" value="@Model.ReceiptDTM.ToLongDateString().ToString()"  readonly/>
+        <label>進貨倉別</label>
+        <input type="text" id="MoveInPlaceID" name="MoveInPlaceID" value="@Model.MoveInPlaceID" />
+        <label>供應商編號</label>
+        <input type="text" id="SupplierID" name="SupplierID" value="@Model.SupplierID" />
+
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" value="@Model.Item" readonly/>
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" value="@Model.PartID"/>
+        <label>進貨數量</label>
+        <input type="number" min="1" id="GRQty" name="GRQty" value="@Model.GRQty"/>
+    </div>
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>
+

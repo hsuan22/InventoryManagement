@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "建立調料單";
+}
+
+<h2>建立調料單</h2>
+
+<form method="post" action="/Inventory/CreateMaterialTransfer">
+    <div>
+        <label>調料單編號</label>
+        <input type="text" id="TransferSN" name="TransferSN" />
+        <label>員工編號</label>
+        <input type="text" id="EmployeeID" name="EmployeeID" />
+    </div>
+    <div>
+        <label>調料日期</label>
+        <input type="date" id="TransferDTM" name="TransferDTM" readonly/>
+        <label>移入倉別</label>
+        <input type="text" id="MoveInPlaceID" name="MoveInPlaceID" />
+        <label>移出倉別</label>
+        <input type="text" id="MoveOutPlaceID" name="MoveOutPlaceID" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>調料數量</label>
+        <input type="number" min="1" id="TransferQty" name="TransferQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>調料數量</label>
+        <input type="number" min="1" id="TransferQty" name="TransferQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>調料數量</label>
+        <input type="number" min="1" id="TransferQty" name="TransferQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>調料數量</label>
+        <input type="number" min="1" id="TransferQty" name="TransferQty" />
+    </div>
+    <div>
+        <label>項次</label>
+        <input type="number" min="1" id="Item" name="Item" />
+        <label>零件編號</label>
+        <input type="text" id="PartID" name="PartID" />
+        <label>調料數量</label>
+        <input type="number" min="1" id="TransferQty" name="TransferQty" />
+    </div>
+
+
+    <input class="save-data" type="submit" value="儲存" />
+</form>

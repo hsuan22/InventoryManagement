@@ -1,0 +1,48 @@
+﻿@using InventoryManagement3.Models;
+@{
+    List<MaterialTransfer> material_transfer_list = ViewBag.material_transfer_list;
+}
+@{
+    ViewBag.Title = "查詢調料單";
+}
+
+<h2>調料單明細</h2>
+
+<table class="table-sheetdetail">
+    <thead>
+        <tr class="table-header">
+            <th>調料單號</th>
+            <th>調料日期</th>
+            <th>項次</th>
+            <th>零件編號</th>
+            <th>調料數量</th>
+            <th>移入倉別</th>
+            <th>移出倉別</th>
+            <th>員工編號</th>
+            <th>編輯</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (MaterialTransfer material_transfer in material_transfer_list)
+        {
+        <tr>
+            <td>@material_transfer.TransferSN</td>
+            <td>@material_transfer.TransferDTM.ToLongDateString().ToString()</td>
+            <td>@material_transfer.Item</td>
+            <td>@material_transfer.PartID</td>
+            <td>@material_transfer.TransferQty</td>
+            <td>@material_transfer.MoveInPlaceID</td>
+            <td>@material_transfer.MoveOutPlaceID</td>
+            <td>@material_transfer.EmployeeID</td>
+
+            <td>
+                @Html.ActionLink("修改", "EditMaterialTransfer", new { TransferSN = material_transfer.TransferSN, Item = material_transfer.Item })
+                |
+                @Html.ActionLink("刪除", "DeleteMaterialTransfer", new { TransferSN = material_transfer.TransferSN, Item = material_transfer.Item })
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>

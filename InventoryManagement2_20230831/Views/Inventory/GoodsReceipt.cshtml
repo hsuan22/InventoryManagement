@@ -1,0 +1,50 @@
+﻿@using InventoryManagement3.Models;
+@{
+    List<GoodsReceipt> goods_receipt = ViewBag.goods_receipt;
+}
+@{
+    ViewBag.Title = "查詢進貨單";
+}
+
+<h2>進貨單明細</h2>
+<table class="table-sheetdetail">
+    <thead>
+        <tr>
+            <th>進貨單號</th>
+            <th>進貨日期</th>
+            <th>項次</th>
+            <th>零件編號</th>
+            <th>進貨數量</th>
+            <th>供應商編號</th>
+            <th>進貨倉別</th>
+            <th>員工編號</th>
+            <th>編輯</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (GoodsReceipt goodsreceipt in goods_receipt)
+        {
+            <tr>
+                <td>@goodsreceipt.GRSN</td>
+                <td>@goodsreceipt.ReceiptDTM.ToLongDateString().ToString()</td>
+                <td>@goodsreceipt.Item</td>
+                <td>@goodsreceipt.PartID</td>
+                <td>@goodsreceipt.GRQty</td>
+                <td>@goodsreceipt.SupplierID</td>
+                <td>@goodsreceipt.MoveInPlaceID</td>
+                <td>@goodsreceipt.EmployeeID</td>
+
+                <td>
+                    @Html.ActionLink("修改", "EditGoodsReceipt", new { GRSN = goodsreceipt.GRSN, Item = goodsreceipt.Item})
+                    |
+                    @Html.ActionLink("刪除", "DeleteGoodsReceipt", new { GRSN = goodsreceipt.GRSN, Item = goodsreceipt.Item })
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
